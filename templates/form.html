@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>Let's Chat</h1>
+            <p>Whether you have a question, want to start a project or simply want to connect.</p>
+            <p>Feel free to send me a message in the contact form</p>
+        </div>
+        <div class="right">
+            <form method="POST">
+                {% csrf_token %}
+                <h1>Contact</h1>
+                <input type="text" name="name" id="" placeholder="Name*">
+                <input type="email" name="email" id="" placeholder="Email*">
+                <input type="text" name="company" id="" placeholder="Company">
+                <input type="text" name="phone" id="" placeholder="Phone">
+                <textarea name="message" id="" cols="40" rows="7" placeholder="Message">
+                    
+                </textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
